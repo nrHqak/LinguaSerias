@@ -1,0 +1,58 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C0F7E7A-2F9D-4F4A-8CF4-35E2E5F66A22}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LinguaSeries</RootNamespace>
+    <AssemblyName>LinguaSeries</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Forms\\SplashForm.cs" />
+    <Compile Include="Forms\\WelcomeForm.cs" />
+    <Compile Include="Forms\\LevelSelectionForm.cs" />
+    <Compile Include="Forms\\MainForm.cs" />
+    <Compile Include="Forms\\DetailsForm.cs" />
+    <Compile Include="Models\\LearningItem.cs" />
+    <Compile Include="Models\\UserProfile.cs" />
+    <Compile Include="Models\\AppSettings.cs" />
+    <Compile Include="Services\\DataService.cs" />
+    <Compile Include="Services\\RecommendationService.cs" />
+    <Compile Include="Services\\FavoritesService.cs" />
+    <Compile Include="Services\\ProgressService.cs" />
+    <Compile Include="Services\\WordQuoteService.cs" />
+    <Compile Include="UI\\Theme.cs" />
+    <Compile Include="UI\\Controls\\ModernButton.cs" />
+    <Compile Include="UI\\Controls\\MovieCardControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\\movies.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\\favorites.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\\progress.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\\settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
