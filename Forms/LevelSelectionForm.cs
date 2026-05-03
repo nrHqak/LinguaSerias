@@ -1,5 +1,6 @@
 using LinguaSeries.UI;
 using LinguaSeries.UI.Controls;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
